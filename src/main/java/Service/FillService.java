@@ -245,7 +245,7 @@ public class FillService {
         int birthRange = 50 - 18;
         int birthYear = childBirthYear - ((int)(Math.random() * birthRange) + 18);
         Event birth = new Event(generateID(), person.getUsername(), person.getPersonID(),
-                generateLocation(), "Birth " + person.getFirstName(), birthYear);
+                generateLocation(), "Birth", birthYear);
         return birth;
     }
 
@@ -259,19 +259,19 @@ public class FillService {
         }while (!(childBirthYear - birthYear > 18));
 
         Event birth = new Event(generateID(), person.getUsername(), person.getPersonID(),
-                generateLocation(), "Birth " + person.getFirstName(), birthYear);
+                generateLocation(), "Birth", birthYear);
         return birth;
     }
 
     private Event generateMarriage(int marriageYear, Location location, Person person) {
         Event marriage = new Event (generateID(), person.getUsername(), person.getPersonID(),
-                location, "Marriage " + person.getFirstName(), marriageYear);
+                location, "Marriage", marriageYear);
         return marriage;
     }
 
     private Event generateDeath(int year, Person person) throws Exception{
         Event death = new Event(generateID(), person.getUsername(), person.getPersonID(),
-                generateLocation(), "Death " + person.getFirstName(), year);
+                generateLocation(), "Death", year);
         return death;
     }
 
