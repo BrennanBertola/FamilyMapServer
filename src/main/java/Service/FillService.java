@@ -81,7 +81,7 @@ public class FillService {
                 Location location = generateLocation();
 
                 Event birth = new Event(eventID, baseUser.getUsername(), baseUser.getPersonID(),
-                        location, "Birth " + baseUser.getFirstName(), year);
+                        location, "Birth", year);
                 EventDAO eDao = new EventDAO(conn);
                 eDao.insert(birth);
                 ++eventsAdded;
